@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+use App\Workout;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class RequestController extends Controller
+class WorkoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,9 @@ class RequestController extends Controller
      */
     public function index()
     {
-	    echo "in index function";
-        $users = User::all();
-	    dd($users);
-        
+        echo "in index function";
+        $users = Workout::all();
+        dd($users);
     }
 
     /**
@@ -29,7 +28,7 @@ class RequestController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -41,15 +40,16 @@ class RequestController extends Controller
     public function store(Request $request)
     {
         echo "in store function";
-//        dd($request);
+//        echo $user;
 
-//        echo $request->id;
-//        echo $request->google_id;
-        $instance = new User;
+        $instance = new Workout;
+//        $instance->user_id = 1;
+//        $instance->trainer_id = 1;
 
-        $instance->user = $request->id;
-        $instance->google_id= $request->google_id;
+        $instance->exercise_name = $request->  exercise_name;
+        $instance->user_id = $request->user_id;
         $instance->save();
+        //
     }
 
     /**

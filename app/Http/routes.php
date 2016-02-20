@@ -1,5 +1,5 @@
 <?php
-
+use App\Issue;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -11,7 +11,7 @@
 |
 */
 // to handle user actions
-Route::resource('userrequests', 'RequestController');
+Route::resource('users', 'RequestController');
 
 // to handle trainer actions i e register a trainer
 Route::resource('traineroperations', 'TrainerController');
@@ -23,13 +23,21 @@ Route::resource('trainerpreference', 'TrainerPreferenceController');
 // workouts
 Route::resource('workouts', 'WorkoutController');
 
+
+// handles 'issues' operations
+Route::resource('issue', 'IssueController');
+
+
 //Route::resource('requests/{id}', 'RequestController');
 
 //Route::resource('requests/{id}{google_id}', 'RequestController@create');
 
 
+
 Route::get('/', function () {
-    return view('welcome');
+    $issues = Issue::all();
+
+    return view('welcome', compact($issues));
 });
 
 
@@ -37,7 +45,7 @@ Route::get('/reports', function () {
     return view('reports');
 });
 
-Route::get('/settings', function () {
+    Route::get('/settings', function () {
     return view('settings');
 });
 
