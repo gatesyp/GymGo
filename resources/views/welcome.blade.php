@@ -68,71 +68,13 @@
     ?>
 
     <div class="divider-new">Clients Requesting Assistance</div>
-    @for ($z = 0; $z < 3; $z++)
 
-            <!--Main row-->
-    <div class="row">
+    <!--Main row-->
+    <div class="row client-cards">
 
-        @for ($i = 0; $i < 4; $i++)
-
-            <div class="col-lg-3 col-md-6">
-                <!--Stylish Card Light-->
-                <div class="card stylish-card hoverable wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="view overlay hm-white-slight z-depth-1">
-                        <img src="{{ $images[array_rand($images, 1)] }}" class="img-responsive" alt="">
-                        <div class="mask waves-effect activator"></div>
-                    </div>
-
-                    <!--Content-->
-                    <div class="card-content">
-                        <h4 class="name">{{ $names[array_rand($names, 1)] }}</h4>
-                        <dl class="dl-horizontal">
-                            <p class="status">Currently doing <b>leg press</b> exercises.</p>
-                            <br>
-                            <dt>Weight</dt>
-                            <dd>{{ rand(120, 210) }} lb</dd>
-                            <dt>Height</dt>
-                            <dd>{{ rand(5, 6) }}'{{ rand(1, 11) }}"</dd>
-                            <dt>BMI</dt>
-                            <dd>{{ rand(11, 30) }}</dd>
-                            <dt>Personal Trainer</dt>
-                            <dd>
-                                @if(rand(0, 1) == 1)
-                                    0:{{ sprintf("%02d", rand(0, 59)) }}:{{ sprintf("%02d", rand(0, 59)) }} left
-                                @else
-                                    Not purchased!
-                                @endif
-                            </dd>
-                        </dl>
-                        <div class="card-footer text-right">
-                                    <span class="card-title activator grey-text text-darken-4">Take action <i
-                                                class="fa fa-chevron-right"></i></span>
-                        </div>
-                    </div>
-
-                    <!--Social Shares-->
-                    <div class="card-reveal social-reveal">
-                        <span class="card-title grey-text text-darken-4">Actions<i
-                                    class="material-icons right close-me">close</i></span>
-                        <hr>
-                        <div class="text-center">
-                            <a class="btn-floating btn-large tw-bg respond waves-effect waves-light"><i
-                                        class="fa fa-arrow-right"> </i></a> Respond
-                            <a class="btn-floating btn-large success-color finished waves-effect waves-light"><i
-                                        class="fa fa-check"> </i></a> Finished
-                        </div>
-                    </div>
-
-                </div>
-                <!--/.Stylish Card Light-->
-            </div>
-
-        @endfor
 
     </div>
     <!--/.Main row-->
-
-    @endfor
 
 
     <button type="button" class="waves-effect waves-light btn btn-default modal-trigger hidden" href="#modal1">Click
@@ -175,30 +117,86 @@
 
 @section('customjs')
     <script>
-        $('.respond').on('click', function () {
-            $('button[href="#modal1"]').click();
-
-            var that = $(this);
-            $('#modal1 .modal-close.btn-success').on('click', function () {
-                if (!that) return;
-                $(that).closest('.stylish-card').find('.alert').remove();
-                $(that).closest('.stylish-card').first().css('border', '#2D94FF 2px dashed');
-                $(that).closest('.card-reveal').first().find('.close-me').click();
-                $(that).closest('.stylish-card').first().find('.name').after('<div class="alert alert-info">Trainer assisting client...</div>').hide().slideDown('slow');
-                that = null;
-            })
-        });
-
-        $('.finished').on('click', function () {
-            $(this).closest('.stylish-card').find('.alert').remove();
-            $(this).closest('.stylish-card').css('border', '2px solid rgb(91, 171, 93)');
-            $(this).closest('.card-reveal').find('.close-me').click();
-            $(this).closest('.stylish-card').find('.name').after('<div class="alert alert-success">Assistance complete!</div>').hide().slideDown('slow');
-        });
-
+        String.prototype.capitalize = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        }
         $(document).ready(function () {
             $.get("/issues/", function (data) {
-                console.log(data);
+                $.each(data, function (k, v) {
+                    $('.client-cards').append('        <div class="col-lg-3 col-md-6">\
+                            <!--Stylish Card Light-->\
+                    <div class="card stylish-card hoverable wow fadeInUp" data-wow-delay="0.4s">\
+                            <div class="view overlay hm-white-slight z-depth-1">\
+                            <img src="{{ $images[array_rand($images, 1)] }}" class="img-responsive" alt="">\
+                            <div class="mask waves-effect activator"></div>\
+                            </div>\
+\
+                            <!--Content-->\
+                            <div class="card-content">\
+                            <h4 class="name">' + v.user_name.capitalize() + '</h4>\
+                            <dl class="dl-horizontal">\
+                            <p class="status">Currently doing <b>' + v.exercise_name + '</b> exercises.</p>\
+                    <br>\
+                    <dt>Weight</dt>\
+                    <dd>{{ rand(120, 210) }} lb</dd>\
+                    <dt>Height</dt>\
+                    <dd>{{ rand(5, 6) }}\'{{ rand(1, 11) }}"</dd>\
+                    <dt>BMI</dt>\
+                    <dd>{{ rand(11, 30) }}</dd>\
+                    <dt>Personal Trainer</dt>\
+                    <dd>\
+                    @if(rand(0, 1) == 1)
+                                    0:{{ sprintf("%02d", rand(0, 59)) }}:{{ sprintf("%02d", rand(0, 59)) }} left\
+                    @else
+                                    Not purchased!\
+                            @endif
+                                    </dd>\
+                                    </dl>\
+                                    <div class="card-footer text-right">\
+                                        <span class="card-title activator grey-text text-darken-4">Take action <i\
+                                                class="fa fa-chevron-right"></i></span>\
+                                            </div>\
+                                            </div>\
+                                                    \
+                                            <!--Social Shares-->\
+                                            <div class="card-reveal social-reveal">\
+                                            <span class="card-title grey-text text-darken-4">Actions<i\
+                                            class="material-icons right close-me">close</i></span>\
+                                            <hr>\
+                                            <div class="text-center">\
+                                            <a class="btn-floating btn-large tw-bg respond waves-effect waves-light"><i\
+                                            class="fa fa-arrow-right"> </i></a> Respond\
+                                            <a class="btn-floating btn-large success-color finished waves-effect waves-light"><i\
+                                            class="fa fa-check"> </i></a> Finished\
+                                            </div>\
+                                            </div>\
+                                                    \
+                                            </div>\
+                                            <!--/.Stylish Card Light-->\
+                                            </div>');
+                });
+
+                $('.respond').on('click', function () {
+                    $('button[href="#modal1"]').click();
+
+                    var that = $(this);
+                    $('#modal1 .modal-close.btn-success').on('click', function () {
+                        if (!that) return;
+                        $(that).closest('.stylish-card').find('.alert').remove();
+                        $(that).closest('.stylish-card').first().css('border', '#2D94FF 2px dashed');
+                        $(that).closest('.card-reveal').first().find('.close-me').click();
+                        $(that).closest('.stylish-card').first().find('.name').after('<div class="alert alert-info">Trainer assisting client...</div>').hide().slideDown('slow');
+                        that = null;
+                    })
+                });
+
+                $('.finished').on('click', function () {
+                    $(this).closest('.stylish-card').find('.alert').remove();
+                    $(this).closest('.stylish-card').css('border', '2px solid rgb(91, 171, 93)');
+                    $(this).closest('.card-reveal').find('.close-me').click();
+                    $(this).closest('.stylish-card').find('.name').after('<div class="alert alert-success">Assistance complete!</div>').hide().slideDown('slow');
+                    $(this).closest('.stylish-card').find('.card-footer').hide();
+                });
             });
         });
     </script>
