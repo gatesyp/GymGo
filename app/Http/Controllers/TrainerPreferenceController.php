@@ -40,14 +40,19 @@ class TrainerPreferenceController extends Controller
      */
     public function store(Request $request)
     {
-        echo "in store function";
 //        dd($request);
 
 //        echo $request->id;
 //        echo $request->google_id;
-        $instance = new Trainer;
+        echo "in store function";
+//        echo $user;
 
-        $instance->trainer = $request->trainer;
+        $instance = new TrainerPreference;
+//        $instance->user_id = 1;
+//        $instance->trainer_id = 1;
+
+        $instance->user_id = $request->  google_id;
+        $instance->trainer_id = $request->trainer_id;
         $instance->save();
     }
 
@@ -87,8 +92,10 @@ class TrainerPreferenceController extends Controller
         if($id = "code")
         {
             echo "in if";
-            echo $request->google_id;
-            echo $request->trainer_id;
+//            echo $request->google_id;
+//            echo $request->trainer_id;
+            $record = TrainerPreference::where('user_id', 1)->first();
+            echo $record;
             $instance = new TrainerPreference;
             $instance->user_id = $request->google_id;
             $instance->trainer_id = $request->trainer_id;

@@ -20,8 +20,11 @@ Route::resource('traineroperations', 'TrainerController');
 // to handle trainer preference operations
 Route::resource('trainerpreference', 'TrainerPreferenceController');
 
+// workouts
+Route::resource('workouts', 'WorkoutController');
+
 //Route::resource('requests/{id}', 'RequestController');
-//
+
 //Route::resource('requests/{id}{google_id}', 'RequestController@create');
 
 
