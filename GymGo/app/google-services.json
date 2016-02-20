@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_id": "gymgo-3fc5c",
+    "project_number": "76312930578",
+    "name": "GymGo"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76312930578:android:a2ed24b0d60e71cc",
+        "client_id": "android:io.stoh.gymgo",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "io.stoh.gymgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76312930578-91vs17cue5rt8pmr637vq38g5kjglen1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.stoh.gymgo",
+            "certificate_hash": "095C07925324906423EB282C5C1B9719C8637D02"
+          }
+        },
+        {
+          "client_id": "76312930578-d07niq42dp11j2no2c410cnuf2t7okak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
