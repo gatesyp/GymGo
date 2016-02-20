@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 20, 2016 at 12:26 PM
+-- Generation Time: Feb 20, 2016 at 01:22 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -123,14 +123,16 @@ CREATE TABLE IF NOT EXISTS `workouts` (
   `created_at` varchar(255) NOT NULL,
   `updated_at` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `workouts`
 --
 
 INSERT INTO `workouts` (`id`, `user_id`, `exercise_name`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Squats', '2016-02-20 14:29:18', '2016-02-20 14:29:18');
+(1, 3, 'Squats', '2016-02-20 14:29:18', '2016-02-20 14:29:18'),
+(2, 3, 'Deadlift', '', ''),
+(3, 3, 'Benching', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

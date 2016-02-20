@@ -60,7 +60,10 @@ class WorkoutController extends Controller
      */
     public function show($id)
     {
-        //
+        $exercise = Workout::where('user_id', $id)->orderBy('id', 'asc')->get();
+        foreach ($exercise as $value){
+        echo $value->exercise_name;
+    }
     }
 
     /**
