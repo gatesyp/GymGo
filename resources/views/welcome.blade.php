@@ -180,18 +180,26 @@
 
             var that = $(this);
             $('#modal1 .modal-close.btn-success').on('click', function () {
+                if (!that) return;
                 $(that).closest('.stylish-card').find('.alert').remove();
-                $(that).closest('.stylish-card').css('border', '#2D94FF 2px dashed');
-                $(that).closest('.card-reveal').find('.close-me').click();
-                $(that).closest('.stylish-card').find('.name').after('<div class="alert alert-info">Trainer assisting client...</div>').hide().slideDown('slow');
+                $(that).closest('.stylish-card').first().css('border', '#2D94FF 2px dashed');
+                $(that).closest('.card-reveal').first().find('.close-me').click();
+                $(that).closest('.stylish-card').first().find('.name').after('<div class="alert alert-info">Trainer assisting client...</div>').hide().slideDown('slow');
+                that = null;
             })
-
         });
+
         $('.finished').on('click', function () {
             $(this).closest('.stylish-card').find('.alert').remove();
             $(this).closest('.stylish-card').css('border', '2px solid rgb(91, 171, 93)');
             $(this).closest('.card-reveal').find('.close-me').click();
             $(this).closest('.stylish-card').find('.name').after('<div class="alert alert-success">Assistance complete!</div>').hide().slideDown('slow');
+        });
+
+        $(document).ready(function () {
+            $.get("/issues/", function (data) {
+                console.log(data);
+            });
         });
     </script>
 @endsection

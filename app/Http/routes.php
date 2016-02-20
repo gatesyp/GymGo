@@ -1,5 +1,6 @@
 <?php
 use App\Issue;
+
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -29,13 +30,10 @@ Route::resource('issues', 'IssuesController');
 
 
 //Route::resource('requests/{id}', 'RequestController');
-
 //Route::resource('requests/{id}{google_id}', 'RequestController@create');
 
 
-
 Route::get('/', function () {
-
     return view('welcome');
 });
 
@@ -44,7 +42,7 @@ Route::get('/reports', function () {
     return view('reports');
 });
 
-    Route::get('/settings', function () {
+Route::get('/settings', function () {
     return view('settings');
 });
 
