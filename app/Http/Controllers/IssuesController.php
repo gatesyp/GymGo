@@ -5,7 +5,6 @@ use App\Issue;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class IssuesController extends Controller
 {
@@ -18,8 +17,7 @@ class IssuesController extends Controller
     {
 
         $issues = Issue::all();
-        return $issues;
-        //
+        return response()->json($issues);
     }
 
     /**
