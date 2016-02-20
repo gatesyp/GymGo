@@ -4,6 +4,23 @@ public class Exercise {
 
     private int id;
     private String name;
+
+    public String getStatic_image() {
+        return static_image;
+    }
+
+    public void setStatic_image(String static_image) {
+        this.static_image = static_image;
+    }
+
+    public String getGif_image() {
+        return gif_image;
+    }
+
+    public void setGif_image(String gif_image) {
+        this.gif_image = gif_image;
+    }
+
     private String static_image;
     private String gif_image;
     private String description;
@@ -32,12 +49,6 @@ public class Exercise {
         this.description = description;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
     }
 
     public Exercise(int id, String name, String description) {

@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 public interface WebInterface {
 
     @GET("/forNoah.php")
+    Call<ExerciseList> getExerciseList();
 //    Call<ServerResult> testName();
-    Call<ExerciseList> getExerciseList
 
 }

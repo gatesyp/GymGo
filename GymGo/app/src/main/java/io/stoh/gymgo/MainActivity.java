@@ -13,7 +13,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Callback<ServerResult> {
+public class MainActivity extends AppCompatActivity implements Callback<ExerciseList> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ServerRe
                 .build();
 
         WebInterface webInterface = builder.create(WebInterface.class);
-        Call<ServerResult> serverResultCall = webInterface.testName();
+        Call<ExerciseList> serverResultCall = webInterface.getExerciseList();
         serverResultCall.enqueue(this);
 
         getFragmentManager().beginTransaction().add(R.id.fragment_container, new ExerciseListFragment())
@@ -37,13 +37,12 @@ public class MainActivity extends AppCompatActivity implements Callback<ServerRe
 
 
     @Override
-    public void onResponse(Call<ServerResult> call, Response<ServerResult> response) {
-        Log.e("result", response.body().getResponse());
-
+    public void onResponse(Call<ExerciseList> call, Response<ExerciseList> response) {
+        Log.e("result", response.body().getResult().get(0).getDescription());
     }
 
     @Override
-    public void onFailure(Call<ServerResult> call, Throwable t) {
+    public void onFailure(Call<ExerciseList> call, Throwable t) {
 
     }
 }
