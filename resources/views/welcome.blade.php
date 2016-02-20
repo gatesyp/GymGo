@@ -1,10 +1,19 @@
 @extends('master')
 
 @section('content')
-    <?php $images = ['http://image.shutterstock.com/display_pic_with_logo/90390/270379067/stock-photo-young-people-training-in-the-gym-270379067.jpg',
+    <?php $images = [
+            'http://image.shutterstock.com/display_pic_with_logo/90390/270379067/stock-photo-young-people-training-in-the-gym-270379067.jpg',
             'http://thumb1.shutterstock.com/display_pic_with_logo/304216/304216,1326758103,10/stock-photo-group-with-dumbbell-weight-training-equipment-on-sport-gym-92905789.jpg',
             'http://thumb1.shutterstock.com/display_pic_with_logo/84610/123602794/stock-photo-young-people-group-of-women-and-men-doing-sport-biking-in-the-gym-for-fitness-123602794.jpg',
-            'http://thumb1.shutterstock.com/display_pic_with_logo/540181/167065400/stock-photo-pretty-girl-working-out-in-a-treadmill-at-the-gym-and-smiling-167065400.jpg',];
+            'http://thumb1.shutterstock.com/display_pic_with_logo/540181/167065400/stock-photo-pretty-girl-working-out-in-a-treadmill-at-the-gym-and-smiling-167065400.jpg',
+            'http://thumb9.shutterstock.com/display_pic_with_logo/76219/298454666/stock-photo-front-view-of-a-muscular-couple-doing-planking-exercises-298454666.jpg',
+            'http://thumb7.shutterstock.com/display_pic_with_logo/163108/314302445/stock-photo-young-woman-runner-resting-after-workout-session-on-sunny-morning-female-fitness-model-sitting-on-314302445.jpg',
+            'http://thumb101.shutterstock.com/display_pic_with_logo/345733/337042967/stock-photo-male-runner-doing-stretching-exercise-preparing-for-morning-workout-in-the-park-337042967.jpg',
+            'http://thumb1.shutterstock.com/display_pic_with_logo/1032538/306238778/stock-photo-sportsman-doing-crunches-in-the-gym-306238778.jpg',
+            'http://thumb7.shutterstock.com/display_pic_with_logo/113008/169282331/stock-photo-personal-trainer-helping-woman-working-with-heavy-dumbbells-169282331.jpg',
+            'http://thumb101.shutterstock.com/display_pic_with_logo/950635/269886053/stock-photo-sportsmen-fit-male-trainer-man-and-woman-doing-clapping-push-ups-explosive-strength-training-269886053.jpg',
+            'http://thumb1.shutterstock.com/display_pic_with_logo/64260/337161530/stock-photo-sport-bodybuilding-lifestyle-and-people-concept-young-man-and-woman-with-barbell-flexing-337161530.jpg',
+    ];
 
     $names = ['Maile',
             'Lera',
@@ -80,7 +89,7 @@
                             <a class="btn-floating btn-large tw-bg waves-effect waves-light"><i
                                         class="fa fa-arrow-right"> </i></a> Respond
                             <a class="btn-floating btn-large success-color waves-effect waves-light"><i
-                                class="fa fa-check"> </i></a> Finished
+                                        class="fa fa-check"> </i></a> Finished
                         </div>
                     </div>
 
