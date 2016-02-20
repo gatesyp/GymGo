@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="{{ asset('assets/mdb.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/style.min.css') }}">
 
-    <!-- Material Design Bootstrap -->
-    <link href="css/style.min.css" rel="stylesheet">
-
     <style>
         img {
             width: 100%;
@@ -29,6 +26,8 @@
             background-size: cover;
         }
     </style>
+
+    @yield('customcss')
 
 </head>
 
@@ -315,6 +314,7 @@
 
     $(document).ready(function () {
         $('select').material_select();
+        $('.modal-trigger').leanModal();
     });
 </script>
 

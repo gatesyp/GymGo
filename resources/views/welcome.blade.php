@@ -67,7 +67,7 @@
             'Dolly',];
     ?>
 
-    <div class="divider-new">Active Queue</div>
+    <div class="divider-new">Clients Requesting Assistance</div>
     @for ($z = 0; $z < 3; $z++)
 
             <!--Main row-->
@@ -85,9 +85,9 @@
 
                     <!--Content-->
                     <div class="card-content">
-                        <h4>{{ $names[array_rand($names, 1)] }}</h4>
+                        <h4 class="name">{{ $names[array_rand($names, 1)] }}</h4>
                         <dl class="dl-horizontal">
-                            <p>Currently doing <b>leg press</b> exercises.</p>
+                            <p class="status">Currently doing <b>leg press</b> exercises.</p>
                             <br>
                             <dt>Weight</dt>
                             <dd>{{ rand(120, 210) }} lb</dd>
@@ -113,12 +113,12 @@
                     <!--Social Shares-->
                     <div class="card-reveal social-reveal">
                         <span class="card-title grey-text text-darken-4">Actions<i
-                                    class="material-icons right">close</i></span>
+                                    class="material-icons right close-me">close</i></span>
                         <hr>
                         <div class="text-center">
-                            <a class="btn-floating btn-large tw-bg waves-effect waves-light"><i
+                            <a class="btn-floating btn-large tw-bg respond waves-effect waves-light"><i
                                         class="fa fa-arrow-right"> </i></a> Respond
-                            <a class="btn-floating btn-large success-color waves-effect waves-light"><i
+                            <a class="btn-floating btn-large success-color finished waves-effect waves-light"><i
                                         class="fa fa-check"> </i></a> Finished
                         </div>
                     </div>
@@ -134,4 +134,69 @@
 
     @endfor
 
+
+    <button type="button" class="waves-effect waves-light btn btn-default modal-trigger hidden" href="#modal1">Click
+        me
+    </button>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+
+        <div class="modal-content">
+            <h4 class="text-center">Select a Trainer</h4>
+            <div class="container-fluid">
+                <div class="row">
+                    <form class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <select>
+                                    <option value="" disabled selected>Select a trainer</option>
+                                    <option value="1">Matt</option>
+                                    <option value="2">Frank</option>
+                                    <option value="3">Steve</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-block btn-success waves-effect waves-light modal-close">
+                            Go!
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" data-dismiss="modal1" class="btn btn-danger modal-action modal-close">Close</a>
+        </div>
+    </div>
+
+@endsection
+
+@section('customjs')
+    <script>
+        $('.respond').on('click', function () {
+            $('button[href="#modal1"]').click();
+
+            var that = $(this);
+            $('#modal1 .modal-close.btn-success').on('click', function () {
+                $(that).closest('.stylish-card').find('.alert').remove();
+                $(that).closest('.stylish-card').css('border', '#2D94FF 2px dashed');
+                $(that).closest('.card-reveal').find('.close-me').click();
+                $(that).closest('.stylish-card').find('.name').after('<div class="alert alert-info">Trainer assisting client...</div>').hide().slideDown('slow');
+            })
+
+        });
+        $('.finished').on('click', function () {
+            $(this).closest('.stylish-card').find('.alert').remove();
+            $(this).closest('.stylish-card').css('border', '2px solid rgb(91, 171, 93)');
+            $(this).closest('.card-reveal').find('.close-me').click();
+            $(this).closest('.stylish-card').find('.name').after('<div class="alert alert-success">Assistance complete!</div>').hide().slideDown('slow');
+        });
+    </script>
+@endsection
+
+@section('customcss')
+    <style>
+    </style>
 @endsection
