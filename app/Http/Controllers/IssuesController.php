@@ -16,6 +16,8 @@ class IssuesController extends Controller
      */
     public function index()
     {
+        $issues = Issue::all();
+        return $issues;
         //
     }
 

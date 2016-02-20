@@ -35,9 +35,8 @@ Route::resource('issue', 'IssueController');
 
 
 Route::get('/', function () {
-    $issues = Issue::all();
 
-    return view('welcome', compact($issues));
+    return view('welcome');
 });
 
 
