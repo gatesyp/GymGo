@@ -1,9 +1,11 @@
 package io.stoh.gymgo;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements Callback<ServerRe
         WebInterface webInterface = builder.create(WebInterface.class);
         Call<ServerResult> serverResultCall = webInterface.testName();
         serverResultCall.enqueue(this);
+
+        getFragmentManager().beginTransaction().add(R.id.fragment_container, new ExerciseListFragment())
+                .commit();
     }
 
 

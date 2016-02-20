@@ -63,11 +63,11 @@ public class SignInActivity extends AppCompatActivity implements
         // [START build_client]
         // Build a GoogleApiClient with access to the Google Sign-In API and the
         // options specified by gso.
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
+        /*mGoogleApiClient = new GoogleApiClient.Builder(this)
                 //// FIXME: 2/20/2016 
-                .enableAutoManage(this *//* FragmentActivity *//*, this *//* OnConnectionFailedListener *//*)
+                .enableAutoManage(this *//**//* FragmentActivity *//**//*, this *//**//* OnConnectionFailedListener *//**//*)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
+                .build();*/
         // [END build_client]
 
         // [START customize_button]
