@@ -44,10 +44,6 @@ public class ExerciseListFragment extends ListFragment {
         exerciseList.add(new Exercise(3, "Crunches3", "these suck lol2"));
         exerciseList.add(new Exercise(4, "Crunches4", "these suck lol4"));
 
-
-
-
-
         doInflate();
 
 

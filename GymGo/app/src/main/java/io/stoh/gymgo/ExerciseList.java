@@ -9,26 +9,34 @@ import com.google.gson.annotations.SerializedName;
 
 public class ExerciseList {
 
-    @SerializedName("result")
+    @SerializedName("exercise")
     @Expose
-    private List<Result> result = new ArrayList<Result>();
+    private List<Exercise> exercise;
 
     /**
      *
      * @return
-     * The result
+     * The exercise
      */
-    public List<Result> getResult() {
-        return result;
+    public List<Exercise> getExercise() {
+        return exercise;
     }
 
     /**
      *
-     * @param result
-     * The result
+     * @param exercise
+     * The exercise
      */
-    public void setResult(List<Result> result) {
-        this.result = result;
+    public void setExercise(List<Exercise> exercise) {
+        this.exercise = exercise;
     }
 
+    @Override
+    public String toString() {
+        String returnString = "hello" + exercise.size();
+        for(Exercise exerciseElement : exercise) {
+            returnString += exerciseElement.toString();
+        }
+        return returnString;
+    }
 }
