@@ -16,6 +16,7 @@ class IssuesController extends Controller
      */
     public function index()
     {
+
         $issues = Issue::all();
         return $issues;
         //
@@ -93,6 +94,13 @@ class IssuesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $issue = Issue::where('user_name', $id)->first();
+        if($issue === null)
+        {
+            return "Request does not exist. ";
+        }
+        else
+            $issue->delete();
+//        echo $issue->exercise_name;
     }
 }

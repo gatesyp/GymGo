@@ -25,7 +25,7 @@ Route::resource('workouts', 'WorkoutController');
 
 
 // handles 'issues' operations
-Route::resource('issue', 'IssueController');
+Route::resource('issues', 'IssuesController');
 
 
 //Route::resource('requests/{id}', 'RequestController');
