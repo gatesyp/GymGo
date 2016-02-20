@@ -25,6 +25,10 @@ Route::resource('trainerpreference', 'TrainerPreferenceController');
 //Route::resource('requests/{id}{google_id}', 'RequestController@create');
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::get('/reports', function () {
     return view('reports');
