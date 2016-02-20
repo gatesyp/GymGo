@@ -10,10 +10,21 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+// to handle user actions
+Route::resource('userrequests', 'RequestController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// to handle trainer actions i e register a trainer
+Route::resource('traineroperations', 'TrainerController');
+
+
+// to handle trainer preference operations
+Route::resource('trainerpreference', 'TrainerPreferenceController');
+
+//Route::resource('requests/{id}', 'RequestController');
+//
+//Route::resource('requests/{id}{google_id}', 'RequestController@create');
+
+
 
 Route::get('/reports', function () {
     return view('reports');
