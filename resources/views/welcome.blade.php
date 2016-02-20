@@ -6,7 +6,26 @@
             'http://thumb1.shutterstock.com/display_pic_with_logo/84610/123602794/stock-photo-young-people-group-of-women-and-men-doing-sport-biking-in-the-gym-for-fitness-123602794.jpg',
             'http://thumb1.shutterstock.com/display_pic_with_logo/540181/167065400/stock-photo-pretty-girl-working-out-in-a-treadmill-at-the-gym-and-smiling-167065400.jpg',];
 
-    $names = ['Steven', 'Frank', 'Aron', 'Peter']
+    $names = ['Maile',
+            'Lera',
+            'Cesar',
+            'Reynaldo',
+            'Raquel',
+            'John',
+            'Margareta',
+            'Loma',
+            'Louanne',
+            'Tonya',
+            'Rubin',
+            'Jaye',
+            'Nery',
+            'Nickolas',
+            'Yajaira',
+            'Vaughn',
+            'Solange',
+            'Melba',
+            'Gilberto',
+            'Carol'];
     ?>
 
     <div class="divider-new">Active Queue</div>
@@ -21,13 +40,13 @@
                 <!--Stylish Card Light-->
                 <div class="card stylish-card hoverable wow fadeInUp" data-wow-delay="0.4s">
                     <div class="view overlay hm-white-slight z-depth-1">
-                        <img src="{{ $images[$i] }}" class="img-responsive" alt="">
+                        <img src="{{ $images[array_rand($images, 1)] }}" class="img-responsive" alt="">
                         <div class="mask waves-effect activator"></div>
                     </div>
 
                     <!--Content-->
                     <div class="card-content">
-                        <h4>{{ $names[$i] }}</h4>
+                        <h4>{{ $names[array_rand($names, 1)] }}</h4>
                         <dl class="dl-horizontal">
                             <p>Currently doing <b>leg press</b> exercises.</p>
                             <br>
