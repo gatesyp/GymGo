@@ -224,9 +224,9 @@
 
     <!-- Side navigation links -->
     <ul class="collapsible collapsible-accordion">
-        <li><a href="#" class="waves-effect waves-light">Queue</a>
-        <li><a href="#" class="waves-effect waves-light">Reports</a>
-        <li><a href="#" class="waves-effect waves-light">Settings</a>
+        <li><a href="{{ url("/") }}" class="waves-effect waves-light">Queue</a>
+        <li><a href="{{ url("/reports") }}" class="waves-effect waves-light">Reports</a>
+        <li><a href="{{ url("/settings") }}" class="waves-effect waves-light">Settings</a>
     </ul>
     <!--/. Side navigation links -->
 </ul>
