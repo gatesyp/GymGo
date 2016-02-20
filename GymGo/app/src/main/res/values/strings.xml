@@ -13,6 +13,7 @@
         enabled for your project, you have a properly configured google-services.json file
         and that your device has an internet connection.
     </string>
+<<<<<<< HEAD
     <string name="loading">Loading…</string>
     <string name="auth_code_fmt">Auth Code: %s</string>
     <string name="id_token_fmt">ID Token: %s</string>
@@ -43,4 +44,7 @@
     <!-- Server Client ID.  This should be a valid Web OAuth 2.0 Client ID obtained
          from https://console.developers.google.com/ -->
     <string name="server_client_id">YOUR_SERVER_CLIENT_ID</string>
+=======
+    <string name="title_activity_main">MainActivity</string>
+>>>>>>> origin/android
 </resources>
