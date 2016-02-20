@@ -1,3 +1,11 @@
+<?php $images = ['http://image.shutterstock.com/display_pic_with_logo/90390/270379067/stock-photo-young-people-training-in-the-gym-270379067.jpg',
+        'http://thumb1.shutterstock.com/display_pic_with_logo/304216/304216,1326758103,10/stock-photo-group-with-dumbbell-weight-training-equipment-on-sport-gym-92905789.jpg',
+        'http://thumb1.shutterstock.com/display_pic_with_logo/84610/123602794/stock-photo-young-people-group-of-women-and-men-doing-sport-biking-in-the-gym-for-fitness-123602794.jpg',
+        'http://thumb1.shutterstock.com/display_pic_with_logo/540181/167065400/stock-photo-pretty-girl-working-out-in-a-treadmill-at-the-gym-and-smiling-167065400.jpg',];
+
+$names = ['Steven', 'Frank', 'Aron', 'Peter']
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -281,17 +289,10 @@
         <div class="container-fluid">
 
             <div class="divider-new">Active Queue</div>
+            @for ($z = 0; $z < 3; $z++)
 
             <!--Main row-->
             <div class="row">
-
-                <?php $images = ['http://image.shutterstock.com/display_pic_with_logo/90390/270379067/stock-photo-young-people-training-in-the-gym-270379067.jpg',
-                        'http://thumb1.shutterstock.com/display_pic_with_logo/304216/304216,1326758103,10/stock-photo-group-with-dumbbell-weight-training-equipment-on-sport-gym-92905789.jpg',
-                        'http://thumb1.shutterstock.com/display_pic_with_logo/84610/123602794/stock-photo-young-people-group-of-women-and-men-doing-sport-biking-in-the-gym-for-fitness-123602794.jpg',
-                        'http://thumb1.shutterstock.com/display_pic_with_logo/540181/167065400/stock-photo-pretty-girl-working-out-in-a-treadmill-at-the-gym-and-smiling-167065400.jpg',];
-
-                $names = ['Steven', 'Frank', 'Aron', 'Peter']
-                ?>
 
                 @for ($i = 0; $i < 4; $i++)
 
@@ -345,6 +346,8 @@
 
             </div>
             <!--/.Main row-->
+
+            @endfor
 
         </div>
         <!--/.Main container-->
