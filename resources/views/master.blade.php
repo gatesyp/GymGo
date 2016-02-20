@@ -21,6 +21,7 @@
         img {
             width: 100%;
         }
+
         .dark-side-nav .logo-wrapper {
             background: url('http://thumb9.shutterstock.com/display_pic_with_logo/88755/111825812/stock-photo-diverse-equipment-and-machines-at-the-gym-room-111825812.jpg') center center no-repeat;
             background-size: cover;
@@ -278,6 +279,11 @@
     <div class="main-wrapper">
         <!--Main container-->
         <div class="container-fluid">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
 
             @yield('content')
 

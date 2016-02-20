@@ -3,10 +3,10 @@
 @section('content')
 
     <div class="row">
-        {{ Form::open() }}
+        {{ Form::open(array('action' => 'WorkoutController@store', 'method' => 'post')) }}
             <div class="row">
                 <div class="col-md-6">
-                    <select>
+                    <select name="user_id">
                         <option value="" disabled selected>Select a client</option>
                         @foreach($users as $user)
                         <option value="{{ $user->id }}">{{ $user->user }}</option>
@@ -14,7 +14,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <select>
+                    <select name="exercise_name">
                         <option value="" disabled selected>Select an exercise</option>
 {{--                        @foreach($exercises as $exercise)--}}
 {{--                            <option value="{{ $exercise->id }}">{{ $exercise->exercise_name }}</option>--}}
@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-block btn-warning waves-effect waves-light">Add!</button>
+            <button type="submit" class="btn btn-block btn-warning waves-effect waves-light">Add!</button>
         {{ Form::close() }}
     </div>
 

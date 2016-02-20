@@ -12,53 +12,52 @@ use App\Issue;
 |
 */
 // to handle user actions
-Route::resource('users', 'RequestController');
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('users', 'RequestController');
 
 // to handle trainer actions i e register a trainer
-Route::resource('traineroperations', 'TrainerController');
+    Route::resource('traineroperations', 'TrainerController');
 
 
 // to handle trainer preference operations
-Route::resource('trainerpreference', 'TrainerPreferenceController');
+    Route::resource('trainerpreference', 'TrainerPreferenceController');
 
 // workouts
-Route::resource('workouts', 'WorkoutController');
+    Route::resource('workouts', 'WorkoutController');
 
 
 // handles 'issues' operations
-Route::resource('issues', 'IssuesController');
+    Route::resource('issues', 'IssuesController');
 
 
 //Route::resource('requests/{id}', 'RequestController');
 //Route::resource('requests/{id}{google_id}', 'RequestController@create');
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application Routes
+    |--------------------------------------------------------------------------
+    |
+    | This route group applies the "web" middleware group to every route
+    | it contains. The "web" middleware group is defined in your HTTP
+    | kernel and includes session state, CSRF protection, and more.
+    |
+    */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    // your routes here
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
 
-Route::get('/reports', function () {
-    return view('reports');
-});
+    Route::get('/reports', function () {
+        return view('reports');
+    });
 
-Route::get('/settings', function () {
-    $users = \App\User::all();
-    $exercises = \App\Workout::all();
-    return view('settings', compact('users', 'exercises'));
-});
+    Route::get('/settings', function () {
+        $users = \App\User::all();
+        $exercises = \App\Workout::all();
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
-
-Route::group(['middleware' => ['web']], function () {
-    //
+        return view('settings', compact('users', 'exercises'));
+    });
 });
