@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements Callback<ServerRe
     }
 
     public void doTest(View view) {
-//        Log.e("Name", RestClient.get().testName().getResponse());
         Retrofit builder = new Retrofit.Builder()
                 .baseUrl(RestClient.getRoot())
                 .addConverterFactory(GsonConverterFactory.create())
