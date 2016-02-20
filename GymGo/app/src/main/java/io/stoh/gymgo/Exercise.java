@@ -2,15 +2,18 @@ package io.stoh.gymgo;
 
 public class Exercise {
 
-    private int key;
+    private int id;
     private String name;
+    private String static_image;
+    private String gif_image;
+    private String description;
 
-    public int getKey() {
-        return key;
+    public int getId() {
+        return id;
     }
 
-    public void setKey(int key) {
-        this.key = key;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,13 +40,8 @@ public class Exercise {
         this.image = image;
     }
 
-    private String description;
-
-    //Todo: implement image later lol
-    private int image;
-
-    public Exercise(int key, String name, String description) {
-        this.key = key;
+    public Exercise(int id, String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
 //        this.image = image;

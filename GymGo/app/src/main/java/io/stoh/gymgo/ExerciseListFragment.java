@@ -13,6 +13,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class ExerciseListFragment extends ListFragment {
 
     ExerciseAdapter exerciseAdapter;
@@ -22,6 +25,13 @@ public class ExerciseListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+
+        Retrofit builder = new Retrofit.Builder()
+                .baseUrl(RestClient.getRoot())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+
 
     }
 

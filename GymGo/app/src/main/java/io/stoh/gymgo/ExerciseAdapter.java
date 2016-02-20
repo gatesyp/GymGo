@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ExerciseAdapter extends ArrayAdapter<Exercise> {
 
@@ -27,7 +26,6 @@ public class ExerciseAdapter extends ArrayAdapter<Exercise> {
     static class ViewHolder {
         TextView name;
         TextView description;
-//        ImageView icon;
     }
 
     @Override

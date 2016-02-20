@@ -24,19 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.delete.delete"
-            android:label="@string/title_activity_delete"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ExerciseListFragment"
-            android:label="@string/title_activity_exercise_list_fragment"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.stoh.gymgo.MainActivity" />
-        </activity>
     </application>
 
 </manifest>
