@@ -32,11 +32,19 @@
                             <p>Currently doing <b>leg press</b> exercises.</p>
                             <br>
                             <dt>Weight</dt>
-                            <dd>150 lb</dd>
+                            <dd>{{ rand(120, 210) }} lb</dd>
                             <dt>Height</dt>
-                            <dd>5'9"</dd>
+                            <dd>{{ rand(5, 6) }}'{{ rand(1, 11) }}"</dd>
                             <dt>BMI</dt>
-                            <dd>23</dd>
+                            <dd>{{ rand(11, 30) }}</dd>
+                            <dt>Personal Trainer</dt>
+                            <dd>
+                                @if(rand(0, 1) == 1)
+                                    0:{{ sprintf("%02d", rand(0, 59)) }}:{{ sprintf("%02d", rand(0, 59)) }} left
+                                @else
+                                    Not purchased!
+                                @endif
+                            </dd>
                         </dl>
                         <div class="card-footer text-right">
                                     <span class="card-title activator grey-text text-darken-4">Take action <i
@@ -50,13 +58,10 @@
                                     class="material-icons right">close</i></span>
                         <hr>
                         <div class="text-center">
-                            <a class="btn-floating btn-large success-color waves-effect waves-light"><i
-                                        class="fa fa-check"> </i></a> Coming
                             <a class="btn-floating btn-large tw-bg waves-effect waves-light"><i
-                                        class="fa fa-arrow-right"> </i></a> Reroute
-                            <a class="btn-floating btn-large gplus-bg waves-effect waves-light"><i
-                                        class="fa fa-ban"> </i></a>
-                            Ban
+                                        class="fa fa-arrow-right"> </i></a> Respond
+                            <a class="btn-floating btn-large success-color waves-effect waves-light"><i
+                                class="fa fa-check"> </i></a> Finished
                         </div>
                     </div>
 

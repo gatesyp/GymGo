@@ -322,6 +322,7 @@
     new WOW().init();
 </script>
 
+@yield('customjs')
 
 </body>
 

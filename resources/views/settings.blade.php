@@ -14,7 +14,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <select>
+                    <select multiple="multiple">
                         <option value="" disabled selected>Select an exercise</option>
                         <option value="1">Leg press</option>
                         <option value="2">Chest press</option>
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-block btn-warning waves-effect waves-light">Assign!</button>
+            <button type="button" class="btn btn-block btn-warning waves-effect waves-light">Add!</button>
         </form>
     </div>
 
