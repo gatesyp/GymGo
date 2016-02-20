@@ -291,88 +291,10 @@
 
 <!--Footer section-->
 <footer class="page-footer center-on-small-only">
-    <div class="container-fluid">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-3 col-xs-offset-1">
-                <p class="column-title white-text">Text widget</p>
-                <div class="column-content">
-                    <p class="thin-100 white-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
-                        odio, minima. Veritatis exercitationem voluptates, fugit beatae, magni sed officia corporis
-                        consequatur cum ut.</p>
-                </div>
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-2 col-md-offset-1">
-                <p class="column-title white-text">Featured posts</p>
-
-                <ul>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                </ul>
-
-            </div>
-            <!--/.Second column-->
-
-            <!--Third column-->
-            <div class="col-md-2">
-                <p class="column-title white-text">Latest reviews</p>
-
-                <ul>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                </ul>
-            </div>
-            <!--/.Third column-->
-
-            <!--Fourth column-->
-            <div class="col-md-2">
-                <p class="column-title white-text">Lorem ipsum</p>
-
-                <ul>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                </ul>
-            </div>
-            <!--/.Fourth column-->
-
-
-        </div>
-    </div>
-    <div class="call-to-action inline-block">
-        <ul class="list-inline">
-            <li>
-                <h5 class="white-text">Subscribe to our newsletter</h5></li>
-            <li><a class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#hp-newsletter">Subscribe</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="social-section text-center">
-        <a class="btn-floating btn-large fb-bg waves-effect waves-light"><i class="fa fa-facebook"> </i></a>
-        <a class="btn-floating btn-large tw-bg waves-effect waves-light"><i class="fa fa-twitter"> </i></a>
-        <a class="btn-floating btn-large gplus-bg waves-effect waves-light"><i class="fa fa-google-plus"> </i></a>
-        <a class="btn-floating btn-large li-bg waves-effect waves-light"><i class="fa fa-linkedin"> </i></a>
-        <a class="btn-floating btn-large ins-bg waves-effect waves-light"><i class="fa fa-instagram"> </i></a>
-        <a class="btn-floating btn-large pin-bg waves-effect waves-light"><i class="fa fa-pinterest"> </i></a>
-        <a class="btn-floating btn-large yt-bg waves-effect waves-light"><i class="fa fa-youtube"> </i></a>
-        <a class="btn-floating btn-large git-bg waves-effect waves-light"><i class="fa fa-github"> </i></a>
-        <a class="btn-floating btn-large email-bg waves-effect waves-light"><i class="fa fa-envelope-o"> </i></a>
-    </div>
-
 
     <div class="footer-copyright text-center rgba-black-light">
         <div class="container-fluid">
-            © 2015 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
+            © {{ date('Y') }} Copyright: <a href="#"> GymGo </a>
         </div>
     </div>
 
