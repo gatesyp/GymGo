@@ -3,28 +3,31 @@
 @section('content')
 
     <div class="row">
-        <form class="col-md-12">
+        {{ Form::open() }}
             <div class="row">
                 <div class="col-md-6">
                     <select>
                         <option value="" disabled selected>Select a client</option>
-                        <option value="1">Matt</option>
-                        <option value="2">Frank</option>
-                        <option value="3">Steve</option>
+                        @foreach($users as $user)
+                        <option value="{{ $user->id }}">{{ $user->user }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <select multiple="multiple">
+                    <select>
                         <option value="" disabled selected>Select an exercise</option>
-                        <option value="1">Leg press</option>
-                        <option value="2">Chest press</option>
-                        <option value="3">Pull-ups</option>
+{{--                        @foreach($exercises as $exercise)--}}
+{{--                            <option value="{{ $exercise->id }}">{{ $exercise->exercise_name }}</option>--}}
+                        {{--@endforeach--}}
+                        <option value="leg press">Leg press</option>
+                        <option value="chest press">Chest press</option>
+                        <option value="pull ups">Pull-ups</option>
                     </select>
                 </div>
             </div>
 
             <button type="button" class="btn btn-block btn-warning waves-effect waves-light">Add!</button>
-        </form>
+        {{ Form::close() }}
     </div>
 
 

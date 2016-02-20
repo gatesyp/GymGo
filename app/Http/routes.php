@@ -43,7 +43,9 @@ Route::get('/reports', function () {
 });
 
 Route::get('/settings', function () {
-    return view('settings');
+    $users = \App\User::all();
+    $exercises = \App\Workout::all();
+    return view('settings', compact('users', 'exercises'));
 });
 
 /*
