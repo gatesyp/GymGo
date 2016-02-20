@@ -37,6 +37,8 @@
                             <dd>5'9"</dd>
                             <dt>BMI</dt>
                             <dd>23</dd>
+                            <dt>Personal Trainer</dt>
+                            <dd>0:{{ sprintf("%02d", rand(0, 59)) }}:{{ sprintf("%02d", rand(0, 59)) }} left</dd>
                         </dl>
                         <div class="card-footer text-right">
                                     <span class="card-title activator grey-text text-darken-4">Take action <i
