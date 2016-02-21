@@ -55,18 +55,18 @@
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="textinput">Bank Account Number</label>
+                <label class="col-md-4 control-label" for="textinput">Zip</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" type="text" placeholder="290190875" class="form-control input-md">
+                    <input id="textinput" name="textinput" type="text" placeholder="44224" class="form-control input-md">
 
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="textinput">Zip</label>
+                <label class="col-md-4 control-label" for="textinput">Bank Account Number</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" type="text" placeholder="44224" class="form-control input-md">
+                    <input id="textinput" name="textinput" type="text" placeholder="290190875" class="form-control input-md">
 
                 </div>
             </div>
