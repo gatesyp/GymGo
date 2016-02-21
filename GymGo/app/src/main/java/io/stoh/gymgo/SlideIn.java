@@ -1,5 +1,6 @@
 package io.stoh.gymgo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -9,9 +10,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class SlideIn extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -60,7 +63,7 @@ public class SlideIn extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+          return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -75,6 +78,10 @@ public class SlideIn extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            /*Intent intent = new Intent(this,Parents.class);
+            startActivity(intent);*/
+            /*            ((TextView)findViewById(R.id.nav_gallery)).setText("fuck you dick");*/
+
 
         } else if (id == R.id.nav_slideshow) {
 
