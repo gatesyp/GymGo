@@ -138,11 +138,7 @@
                 });
 
                 $('.finished').on('click', function () {
-                    $(this).closest('.stylish-card').find('.alert').remove();
-                    $(this).closest('.stylish-card').css('border', '2px solid rgb(91, 171, 93)');
-                    $(this).closest('.card-reveal').find('.close-me').click();
-                    $(this).closest('.stylish-card').find('.name').after('<div class="alert alert-success">Assistance complete!</div>').hide().slideDown('slow');
-                    $(this).closest('.stylish-card').find('.card-footer').hide();
+                    $(this).closest('.stylish-card').slideUp();
                 });
             });
         });
