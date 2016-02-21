@@ -49,7 +49,7 @@ class TransactionController extends Controller
         $instance->payee_id = '56c66be6a73e492741507c90';
         $instance->amount = 50;
         $instance->type = 'p2p';
-        $instance->transactiong_date = $todayDate;
+        $instance->transaction_date = $todayDate;
         $instance->medium = 'balance';
         $instance->save();
     }
