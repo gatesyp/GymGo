@@ -16,10 +16,8 @@ class RequestController extends Controller
      */
     public function index()
     {
-	    echo "in index function";
         $users = User::all();
-	    dd($users);
-        
+        return response()->json($users);
     }
 
     /**
@@ -40,11 +38,6 @@ class RequestController extends Controller
      */
     public function store(Request $request)
     {
-        echo "in store function";
-//        dd($request);
-
-//        echo $request->id;
-//        echo $request->google_id;
         $instance = new User;
 
         $instance->user = $request->name;
