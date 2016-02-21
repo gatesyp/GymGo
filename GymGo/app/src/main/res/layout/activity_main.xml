@@ -7,6 +7,79 @@
     android:fitsSystemWindows="true"
     tools:context="com.main">
 
+
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false">
+
+            <!-- you main xml,all of your xml -->
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start" >
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                tools:context=".Tab_login" >
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/button3"
+                    android:layout_alignRight="@+id/button3"
+                    android:layout_below="@+id/button3"
+                    android:layout_marginTop="21dp"
+                    android:text="Help" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Log In" />
+
+                <Button
+                    android:id="@+id/Button02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/button2"
+                    android:layout_alignRight="@+id/button2"
+                    android:layout_below="@+id/button2"
+                    android:layout_marginTop="19dp"
+                    android:text="free User" />
+
+                <Button
+                    android:id="@+id/Button01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/Button02"
+                    android:layout_alignRight="@+id/Button02"
+                    android:layout_below="@+id/Button02"
+                    android:layout_marginTop="23dp"
+                    android:text="Roaming" />
+            </RelativeLayout>
+        </ScrollView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
+
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,4 +96,10 @@
 
     <include layout="@layout/content_main" />
 
+
+
+
+
 </android.support.design.widget.CoordinatorLayout>
+
+
