@@ -1,25 +1,13 @@
 
 package io.stoh.gymgo;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 public class Exercise {
 
-    @SerializedName("id")
-    @Expose
     private int id;
-    @SerializedName("name")
-    @Expose
     private String name;
-    @SerializedName("static_image")
-    @Expose
     private String staticImage;
-    @SerializedName("gif_image")
-    @Expose
     private String gifImage;
-    @SerializedName("description")
-    @Expose
     private String description;
 
 
