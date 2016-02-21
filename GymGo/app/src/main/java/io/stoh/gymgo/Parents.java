@@ -13,7 +13,7 @@ import android.widget.Spinner;
     public abstract class Parents extends SlideIn implements AdapterView.OnItemSelectedListener
 {
         private Spinner spinner;
-        private static final String[]paths = {"Peter", "Steve", "Bartha"};
+        private static final String[]paths = {"Peter", "Steve"};
 
         @Override
         protected void onCreate(Bundle savedInstanceState){
@@ -38,9 +38,6 @@ import android.widget.Spinner;
                     break;
                 case 1:
                     // Whatever you want to happen when the second item gets selected
-                    break;
-                case 2:
-                    // Whatever you want to happen when the thrid item gets selected
                     break;
 
             }

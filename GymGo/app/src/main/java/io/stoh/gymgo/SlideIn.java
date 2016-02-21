@@ -2,6 +2,8 @@ package io.stoh.gymgo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -18,6 +20,15 @@ import android.widget.TextView;
 
 public class SlideIn extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            TextView myTextView =
+                    (TextView) findViewById(R.id.nav_camera);
+            myTextView.setText("Button Pressed");
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,22 +85,53 @@ public class SlideIn extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Runnable runnable = new Runnable() {
+            public void run() {
 
-        if (id == R.id.nav_camera) {
+                long endTime = System.currentTimeMillis() +
+                        20*1000;
+
+                while (System.currentTimeMillis() < endTime) {
+                    synchronized (this) {
+                        try {
+                            wait(endTime -
+                                    System.currentTimeMillis());
+                        } catch (Exception e) {}
+                    }
+
+                }
+                handler.sendEmptyMessage(0);
+            }
+        };
+
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        if (id == R.id.nav_camera)
+        {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            /*Intent intent = new Intent(this,Parents.class);
-            startActivity(intent);*/
+        }
+        else if (id == R.id.nav_gallery)
+        {
+            Intent intent = new Intent(this,Parents.class);
+            startActivity(intent);
             /*            ((TextView)findViewById(R.id.nav_gallery)).setText("fuck you dick");*/
 
 
-        } else if (id == R.id.nav_slideshow) {
+        }
+        else if (id == R.id.nav_slideshow)
+        {
 
-        } else if (id == R.id.nav_manage) {
+        }
+        else if (id == R.id.nav_manage)
+        {
 
-        } else if (id == R.id.nav_share) {
+        }
+        else if (id == R.id.nav_share)
+        {
 
-        } else if (id == R.id.nav_send) {
+        }
+        else if (id == R.id.nav_send)
+        {
 
         }
 
