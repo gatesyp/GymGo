@@ -38,7 +38,11 @@ public class MainActivity extends AppCompatActivity implements Callback<Exercise
 
     @Override
     public void onResponse(Call<ExerciseList> call, Response<ExerciseList> response) {
-        Log.e("result", response.body().getResult().get(0).getDescription());
+        Log.e("Debug", "Output: " + response.body().toString());
+        for(Exercise exercise : response.body().getExercise()) {
+            Log.e("Exercise", exercise.getName());
+
+        }
     }
 
     @Override

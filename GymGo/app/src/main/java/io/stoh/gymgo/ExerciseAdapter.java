@@ -46,7 +46,8 @@ public class ExerciseAdapter extends ArrayAdapter<Exercise> {
         final Exercise exercise = arrayList.get(position);
         viewHolder.name.setText(exercise.getName());
         viewHolder.description.setText(exercise.getDescription());
-        convertView.setTag(R.string.viewholder_tag,viewHolder);
+        convertView.setTag(R.string.viewholder_tag, viewHolder);
+        convertView.setTag(R.string.exercise_tag, exercise);
         return convertView;
     }
 
