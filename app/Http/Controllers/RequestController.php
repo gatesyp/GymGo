@@ -47,7 +47,7 @@ class RequestController extends Controller
 //        echo $request->google_id;
         $instance = new User;
 
-        $instance->user = $request->id;
+        $instance->user = $request->name;
         $instance->google_id= $request->google_id;
         $instance->save();
     }
