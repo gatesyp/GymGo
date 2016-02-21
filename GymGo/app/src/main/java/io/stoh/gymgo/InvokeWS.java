@@ -5,9 +5,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,6 +32,44 @@ public class InvokeWS {
         this.callback = callback;
         connect();
     }
+    public InvokeWS(final Context context, String path, RequestParams params, WSInterface callback, boolean put) {
+        this.ip = Utilities.getServerIP() + path;
+        this.context = context;
+        this.params = params;
+        this.callback = callback;
+        if(put) {
+            connectPut();
+        }
+    }
+
+
+    private void connectPut() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.setTimeout(TIMEOUT);
+
+        client.post(ip, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                JSONObject obj = new JSONObject();
+                try {
+                    obj.put("response", statusCode);
+                    callback.requestComplete(obj);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+    }
+
+
+
+
 
     private void connect() {
         AsyncHttpClient client = new AsyncHttpClient();

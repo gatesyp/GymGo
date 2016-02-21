@@ -5,21 +5,29 @@
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/exercise_clip_art"
-        android:id="@+id/exercise_image"/>
+        android:id="@+id/exercise_image"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/exercise_descriptions" />
+        android:text="description lol"
+        android:layout_marginTop="10dp"
+        android:id="@+id/exercise_descriptions"
+        android:layout_gravity="center_horizontal" />
 
     <Button
+        android:id="@+id/butt_help"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Help"
-        android:onClick="needHelp"/>
+        android:gravity="center"
+        android:onClick="needHelp"
+        android:layout_gravity="center_horizontal" />
 
 
 </LinearLayout>

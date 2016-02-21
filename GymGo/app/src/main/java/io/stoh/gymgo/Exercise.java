@@ -11,10 +11,11 @@ public class Exercise {
     private String description;
 
 
-    public Exercise(int id, String name, String description) {
+    public Exercise(int id, String name, String description, String staticImage) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.staticImage = staticImage;
     }
 
     /**

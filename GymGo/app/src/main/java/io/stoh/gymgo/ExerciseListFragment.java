@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -30,8 +29,12 @@ public class ExerciseListFragment extends ListFragment {
         Bundle bundle = new Bundle();
         Exercise exercise = (Exercise) l.getChildAt(position).getTag(R.string.exercise_tag);
 
+
+
+
         bundle.putInt("exercise_id", exercise.getId());
         bundle.putString("exercise_name", exercise.getName());
+        bundle.putString("static_image", exercise.getStaticImage());
         bundle.putString("exercise_description", exercise.getDescription());
 
         ExerciseDetailFragment detailFragment = new ExerciseDetailFragment();
