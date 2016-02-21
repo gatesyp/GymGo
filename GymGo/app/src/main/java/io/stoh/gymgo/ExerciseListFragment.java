@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class ExerciseListFragment extends ListFragment {
@@ -27,18 +29,21 @@ public class ExerciseListFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        exerciseList = new ArrayList<>();
-        exerciseList.add(new Exercise(1, "Crunches", "these suck lol"));
-        exerciseList.add(new Exercise(2, "Crunches2", "these suck lol2"));
-        exerciseList.add(new Exercise(3, "Crunches3", "these suck lol2"));
-        exerciseList.add(new Exercise(4, "Crunches4", "these suck lol4"));
 
-        doInflate();
-
-
+        getExercises();
 
 
         return inflater.inflate(R.layout.fragment_exercise_list, container, false);
+    }
+
+    private void getExercises() {
+        new InvokeWS(getActivity(), "forNoah.php", null, new WSInterface() {
+            @Override
+            public void requestComplete(JSONObject jsonObject) {
+                exerciseList = Utilities.parseExercises(jsonObject, "result");
+                doInflate();
+            }
+        });
     }
 
     private void doInflate() {

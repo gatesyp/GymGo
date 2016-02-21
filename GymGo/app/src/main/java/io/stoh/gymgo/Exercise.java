@@ -71,8 +71,6 @@ public class Exercise {
         this.staticImage = staticImage;
     }
 
-<<<<<<< HEAD
-=======
     /**
      *
      * @return
@@ -81,7 +79,6 @@ public class Exercise {
     public String getGifImage() {
         return gifImage;
     }
->>>>>>> origin/android
 
     /**
      *
