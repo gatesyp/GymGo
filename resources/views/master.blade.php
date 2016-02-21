@@ -199,7 +199,7 @@
     <div class="logo-wrapper">
         <a href="#" class="waves-effect waves-light">
             <div class="avatar-wrapper">
-                <img src="http://0.gravatar.com/avatar/60efa32c26a19f3ed2e42798afb705ba?s=100&d=mm&r=g"
+                <img src="https://0.gravatar.com/avatar/60efa32c26a19f3ed2e42798afb705ba?s=100&d=mm&r=g"
                      class="img-responsive img-circle">
             </div>
         </a>
