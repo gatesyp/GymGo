@@ -63,7 +63,7 @@
         }
 
         $(document).ready(function () {
-            $.get("/users/", function (data) {
+            $.get("{{ url('/users') }}", function (data) {
 
                 var supports = 0;
                 $.each(data, function (k, v) {
