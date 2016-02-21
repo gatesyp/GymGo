@@ -8,12 +8,17 @@ import android.view.View;
 import org.json.JSONObject;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends SlideIn {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
+       setContentView(R.layout.activity_slide_in);
+
+
+
+
     }
 
     public void doTest(View view) {
