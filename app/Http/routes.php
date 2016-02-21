@@ -53,6 +53,10 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
 
+    Route::get('/account', function () {
+        return view('account');
+    });
+
 
     Route::get('/reports', function () {
         return view('reports');

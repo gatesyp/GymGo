@@ -227,6 +227,7 @@
         <li><a href="{{ url("/") }}" class="waves-effect waves-light">Queue</a>
         <li><a href="{{ url("/reports") }}" class="waves-effect waves-light">Reports</a>
         <li><a href="{{ url("/settings") }}" class="waves-effect waves-light">Workouts</a>
+        <li><a href="{{ url("/account") }}" class="waves-effect waves-light">Account</a>
     </ul>
     <!--/. Side navigation links -->
 </ul>
