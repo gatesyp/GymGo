@@ -49,7 +49,6 @@ public class Exercise {
         this.description = description;
     }
 
-    }
 
     public Exercise(int id, String name, String description) {
         this.id = id;
