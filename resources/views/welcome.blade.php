@@ -76,7 +76,7 @@
                             <!--Stylish Card Light-->\
                     <div class="card stylish-card hoverable wow fadeInUp" data-wow-delay="0.4s">\
                             <div class="view overlay hm-white-slight z-depth-1">\
-                            <img src="http://api.randomuser.me/portraits/' + (getRandomArbitrary(0, 1) == 0 ? 'women' : 'men') + '/' + k + '.jpg" class="img-responsive" alt="">\
+                            <img src="http://api.randomuser.me/portraits/' + v.gender + '/' + k + '.jpg" class="img-responsive" alt="">\
                             <div class="mask waves-effect activator"></div>\
                             </div>\
 \
