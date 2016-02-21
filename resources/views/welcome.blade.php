@@ -138,7 +138,7 @@
                 });
 
                 $('.finished').on('click', function () {
-                    $(this).closest('.stylish-card').slideUp();
+                    $(this).closest('.mix').slideUp();
                 });
             });
         });
@@ -149,6 +149,13 @@
     <style>
         .client-cards .mix {
             display: none;
+        }
+        .lg-3 {
+            -webkit-transition: all 1s ease;
+            transition: all 1.5s ease-in-out;
+            -moz-transition: all 1.5s ease-in-out;
+            -ms-transition: all 1.5s ease-in-out;
+            -o-transition: all 1.5s ease-in-out;
         }
     </style>
 @endsection
