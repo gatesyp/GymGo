@@ -26,6 +26,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('workouts', 'WorkoutController');
 
 
+//    do transaction
+    Route::resource('transactions', 'TransactionController');
+
+
 // handles 'issues' operations
     Route::resource('issues', 'IssuesController');
 
