@@ -13,9 +13,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/mdb.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/style.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/mdb.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/style.min.css') }}">
 
     <style>
         img {
@@ -23,7 +23,7 @@
         }
 
         .dark-side-nav .logo-wrapper {
-            background: url('http://thumb9.shutterstock.com/display_pic_with_logo/88755/111825812/stock-photo-diverse-equipment-and-machines-at-the-gym-room-111825812.jpg') center center no-repeat;
+            background: url('https://thumb9.shutterstock.com/display_pic_with_logo/88755/111825812/stock-photo-diverse-equipment-and-machines-at-the-gym-room-111825812.jpg') center center no-repeat;
             background-size: cover;
         }
     </style>
@@ -308,9 +308,9 @@
 
 
 <!-- SCRIPTS -->
-<script src="{{asset('assets/jquery.min.js')}}"></script>
-<script src="{{asset('assets/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets/mdb.min.js')}}"></script>
+<script src="{{secure_asset('assets/jquery.min.js')}}"></script>
+<script src="{{secure_asset('assets/bootstrap.min.js')}}"></script>
+<script src="{{secure_asset('assets/mdb.min.js')}}"></script>
 
 <script>
     // Initialize collapse button
